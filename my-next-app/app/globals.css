@@ -1,26 +1,64 @@
-@import "tailwindcss";
+/* ---------------------------------------------------------
+   TAILWIND LAYERS
+---------------------------------------------------------- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------------------------------------------------------
+   FONTS (KEEP SIMPLE, AVOID MULTIPLE REMOTE FILES)
+---------------------------------------------------------- */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* ---------------------------------------------------------
+   BASE THEME VARIABLES
+---------------------------------------------------------- */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --brand-black: 0 0% 11%;
+    --brand-teal: 162 67% 43%;
+    --brand-green: 166 59% 17%;
+    --brand-white: 0 0% 100%;
+    --brand-gray: 0 0% 90%;
+
+    --background: var(--brand-white);
+    --foreground: var(--brand-black);
+    --primary: var(--brand-teal);
+    --secondary: var(--brand-green);
+    --muted: var(--brand-gray);
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: var(--brand-black);
+    --foreground: var(--brand-white);
+    --primary: var(--brand-teal);
+    --secondary: var(--brand-green);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  a {
+    @apply text-brand-green transition-all duration-300;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ---------------------------------------------------------
+   UTILITIES
+---------------------------------------------------------- */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
