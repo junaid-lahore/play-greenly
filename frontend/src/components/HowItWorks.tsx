@@ -23,7 +23,7 @@ const steps = [
 const HowItWorks: React.FC = () => {
   return (
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="page-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column */}
           <div className="space-y-8">

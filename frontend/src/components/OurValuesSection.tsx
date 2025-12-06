@@ -13,7 +13,7 @@ import {
 const OurValuesSection: React.FC = () => {
   return (
     <section className="bg-brand-light-bg py-24 sm:py-32">
-      <div className="container mx-auto px-4">
+      <div className="page-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
           <motion.div

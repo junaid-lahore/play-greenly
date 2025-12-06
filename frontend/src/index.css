@@ -148,6 +148,28 @@
   }
 }
 
+@layer base {
+  html,
+  body,
+  #__next {
+    @apply min-h-screen;
+  }
+
+  body {
+    @apply m-0 flex flex-col bg-background text-foreground antialiased;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+  }
+
+  #__next {
+    @apply flex flex-1 flex-col;
+  }
+
+  main {
+    @apply flex-1 w-full;
+  }
+}
+
 
 @layer base {
   * {
@@ -163,6 +185,12 @@
   }
   a:hover {
     text-decoration: none;
+  }
+}
+
+@layer components {
+  .page-container {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 }
 

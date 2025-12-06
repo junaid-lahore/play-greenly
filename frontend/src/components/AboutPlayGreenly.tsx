@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const AboutPlayGreenly: React.FC = () => {
   return (
     <section className="relative w-full">
-      <div className="container mx-auto px-4 py-24">
+      <div className="page-container py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Image Column */}
           <motion.div

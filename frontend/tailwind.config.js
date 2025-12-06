@@ -5,6 +5,18 @@ export default {
   content: [
     './ui/src/**/*.{js,jsx,ts,tsx}',"./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1.25rem",
+        lg: "2rem",
+        xl: "2.5rem",
+      },
+      screens: {
+        "2xl": "1320px",
+      },
+    },
     extend: {
       fontFamily: {
         heading: ['NeuropoliticalRg', 'sans-serif'],

@@ -7,7 +7,7 @@ const isDeployedToCustomApiPath = API_PREFIX_PATH !== API_PATH;
 const constructBaseUrl = (): string => {
   if (isDeployedToCustomApiPath) {
     // Access via origin domain where webapp was hosted with given api prefix path
-    const domain = window.location.origin || `https://${API_HOST}`;
+    const domain = typeof window !== 'undefined' ? window.location.origin : `https://${API_HOST}`;
     return `${domain}${API_PREFIX_PATH}`;
   }
 

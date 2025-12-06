@@ -26,7 +26,7 @@ const ProductFeatureSection: React.FC = () => {
 
   return (
     <section className="py-20">
-      <div className="container mx-auto text-center">
+      <div className="page-container text-center">
         <h2 className="text-4xl font-bold text-gray-800">Play Smart, Live Greenly</h2>
         <p className="mt-2 text-lg text-gray-600">
           Discover how our biodegradable golf balls protect nature while keeping your swing effortless.

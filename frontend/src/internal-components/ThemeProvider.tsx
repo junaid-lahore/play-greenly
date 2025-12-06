@@ -21,28 +21,33 @@ const initialState: ThemeProviderState = {
 export const ThemeProviderContext =
   createContext<ThemeProviderState>(initialState);
 
-declare const __APP_ID__: string;
+const appId = process.env.NEXT_PUBLIC_APP_ID ?? "play-greenly";
 
 export function ThemeProvider({
   children,
   defaultTheme = "system",
-  storageKey = `databutton-${__APP_ID__}-ui-theme`,
+  storageKey = `databutton-${appId}-ui-theme`,
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme,
+    () =>
+      (typeof window !== "undefined"
+        ? (localStorage.getItem(storageKey) as Theme)
+        : null) || defaultTheme,
   );
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const root = window.document.documentElement;
 
     root.classList.remove("light", "dark");
 
     if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
+      const systemTheme =
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
 
       root.classList.add(systemTheme);
       return;
@@ -54,7 +59,9 @@ export function ThemeProvider({
   const value = {
     theme,
     setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme);
+      if (typeof window !== "undefined") {
+        localStorage.setItem(storageKey, theme);
+      }
       setTheme(theme);
     },
   };

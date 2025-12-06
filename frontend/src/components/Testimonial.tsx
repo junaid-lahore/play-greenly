@@ -97,7 +97,7 @@ export const Testimonial: React.FC = () => {
 
   return (
     <section className="relative bg-brand-light-bg py-20 overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="page-container relative z-10">
         <div className="text-center mb-16">
           <span className="text-brand-teal font-bold tracking-widest text-sm">TESTIMONIAL</span>
           <h2 className="text-4xl font-bold text-gray-800 mt-2">

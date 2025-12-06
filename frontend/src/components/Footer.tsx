@@ -25,7 +25,7 @@ export function Footer() {
         </div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="page-container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {/* Column 1: Company Info & Logo */}
           <div className="space-y-6">

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const BiodegradableBallSection = () => {
   return (
     <div className="py-20">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="page-container grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col justify-center pr-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4 text-left">
             The Future of Golf is Green

@@ -49,7 +49,7 @@ export const Testimonials = ({ variant = "multi" }: TestimonialsProps) => {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
         style={{ willChange: "transform" }}
-        className="container mx-auto"
+        className="page-container"
       >
         <h2 className="text-h2 font-bold text-brand-green mb-12 text-center font-title">
           What Our Golfers Say

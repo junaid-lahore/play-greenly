@@ -81,7 +81,7 @@ export const BlogLayout = ({
       </Helmet>
       <div className="flex flex-col min-h-screen font-sans bg-white">
         <div className="bg-gradient-to-b from-[#F0FFF4] to-[#E6F4EA] relative">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="page-container relative z-10">
             <BlogHeader />
             <BlogHero title={title} date={date} author={author} />
           </div>
@@ -101,7 +101,7 @@ export const BlogLayout = ({
           </div>
         </div>
         <div className="bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="page-container">
             {/* Back to Blog Navigation */}
             <div className="py-4 border-b border-gray-200/80">
               <Link 
@@ -115,7 +115,7 @@ export const BlogLayout = ({
             <SocialAndTagsBar categories={categories} />
           </div>
         </div>
-        <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
+        <main className="flex-grow page-container pt-8 pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-10 lg:gap-x-6">
             {/* Main Content (Order 1 on mobile, 2 on desktop) */}
             <div className="lg:col-span-6 order-1 lg:order-2 bg-gray-50/80 p-4 sm:p-6 rounded-lg blog-content shadow-sm">

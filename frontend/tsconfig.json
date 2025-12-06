@@ -9,7 +9,7 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "allowImportingTsExtensions": true,
     "strict": false,
@@ -17,9 +17,9 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
       "brain": [
@@ -32,7 +32,7 @@
         "./src/components/*"
       ],
       "pages/*": [
-        "./src/pages/*"
+        "./src/site-pages/*"
       ],
       "app": [
         "./src/app"
@@ -55,11 +55,27 @@
       "@/components/ui/*": [
         "./src/extensions/shadcn/components/*"
       ],
-    }
+      "react-router-dom": [
+        "./src/lib/react-router-dom.tsx"
+      ],
+      "react-helmet": [
+        "./src/lib/react-helmet.tsx"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "incremental": true,
+    "strictNullChecks": true
   },
   "include": [
+    "next-env.d.ts",
     "env.d.ts",
-    "src"
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "src/brain/Brain.ts",
@@ -67,11 +83,7 @@
     "src/brain/data-contracts.ts",
     "src/brain/http-client.ts"
   ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ],
+  "references": [],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
